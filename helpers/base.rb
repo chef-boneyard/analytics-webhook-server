@@ -3,7 +3,7 @@ def persist(id, payload)
   case conf['type']
   when 'file'
     file_output(conf, payload)
-  when 'stdout'
+  when 'log'
     log_output(conf, payload)
   when 'exec'
     exec_output(conf, payload)
