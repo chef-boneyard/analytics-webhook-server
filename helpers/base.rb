@@ -1,5 +1,13 @@
-def persist(id, payload)
+def persist(id, notificationAlias, payload)
   conf = settings.output
+  if !notificationAlias.nil?
+    if settings.aliases
+      if settings.aliases.has_key?(notificationAlias)
+        conf = settings.aliases[notificationAlias]['output']
+      end
+    end
+  end
+
   case conf['type']
   when 'file'
     file_output(conf, payload)

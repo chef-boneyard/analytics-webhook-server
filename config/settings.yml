@@ -1,3 +1,7 @@
 ---
 output: 
     type: log
+aliases:
+    default:
+        output:
+            type: log
