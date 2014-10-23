@@ -1,8 +1,8 @@
-require 'sinatra/base'
-require 'sinatra/config_file'
+ENV['RACK_ENV'] ||= 'development'
 
-require 'json'
-require 'mixlib/shellout'
+require 'bundler'
+Bundler.require :default, ENV['RACK_ENV'].to_sym
+
 require_relative 'routes/init'
 require_relative 'helpers/init'
 
