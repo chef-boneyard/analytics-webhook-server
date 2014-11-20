@@ -15,6 +15,10 @@
 # limitations under the License.
 #
 
-def log_output(config, payload)
-  logger.info payload.to_json
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new :specs do |task|
+  task.pattern = Dir['spec/**/*_spec.rb']
 end
+
+task :default => ['specs']
